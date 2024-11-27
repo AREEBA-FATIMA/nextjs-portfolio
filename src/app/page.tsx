@@ -1,101 +1,164 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Profile() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-black text-white flex flex-col items-center justify-center py-[17px] px-5 lg:px-40 h-full lg:overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full">
+        {/* Left Section */}
+        <div className="col-span-1 flex flex-col items-center max-w-full mx-auto w-full">
+          {/* Profile Summary Box */}
+          <div className="bg-purple-900 p-2 rounded-lg text-center w-full">
+            <div className="flex flex-col items-center">
+              <p className="text-6xl lg:text-4xl font-extrabold mt-2 mb-2" id="stylish">Areeba Fatima</p>
+              <Image
+                src="/images/me-2.png"
+                alt="Areeba Fatima"
+                width={130}
+                height={130}
+                className="rounded-lg w-[240px] h-[200px] lg:h-[100px] lg:w-[130px]"
+              />
+              <p className="mt-2 text-base lg:text-xs">
+                Passionate about creating and designing websites with engaging interfaces.
+              </p>
+              <button className="bg-black text-white hover:bg-white hover:text-black rounded-full px-4 py-2 mt-2 text-xs lg:text-base">
+                Download CV
+              </button>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Skills Section */}
+          <Link href="/skills">
+            <div className="bg-purple-900 py-4 px-6 rounded-lg text-center w-full mt-4">
+              <p className="text-lg font-bold text-left mb-2">Skills</p>
+              <div className="bg-purple-100 rounded-lg pr-4 py-[0.2px]">
+                <div className="flex flex-col items-center mt-4 space-y-2">
+                  {/* Upper Line for Skill Icons */}
+                  <div className="flex justify-center space-x-2 lg:space-x-4">
+                    {[
+                      { src: "/images/s-1.png", alt: "HTML5" },
+                      { src: "/images/s-2.png", alt: "CSS3" },
+                      { src: "/images/s-3.png", alt: "JavaScript" },
+                      { src: "/images/s-4.png", alt: "TypeScript" },
+                      { src: "/images/s-5.png", alt: "Next.js" },
+                    ].map((skill, index) => (
+                      <div key={index} className="relative group">
+                        <Image
+                          src={skill.src}
+                          alt={skill.alt}
+                          width={20}
+                          height={20}
+                          className="mx-1 lg:mx-2"
+                          id="skills"
+                        />
+                        <span className="absolute bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-gray-700 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300">
+                          {skill.alt}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Lower Line for Skill Icons */}
+                  <div className="flex justify-center space-x-2 lg:space-x-4">
+                    {[
+                      { src: "/images/s-6.png", alt: "Tailwind CSS" },
+                      { src: "/images/s-7.png", alt: "Figma" },
+                      { src: "/images/s-8.png", alt: "VS Code" },
+                      { src: "/images/s-9.png", alt: "Bootstrap" },
+                      { src: "/images/s-10.png", alt: "Canva" },
+                    ].map((skill, index) => (
+                      <div key={index + 5} className="relative group">
+                        <Image
+                          src={skill.src}
+                          alt={skill.alt}
+                          width={20}
+                          height={20}
+                          className="mx-1 lg:mx-2"
+                          id="skills"
+                        />
+                        <span className="absolute bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-gray-700 text-white text-xs rounded-md px-2 py-1 transition-opacity duration-300">
+                          {skill.alt}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="mt-4 text-base lg:text-xs">
+                Visit the projects section to see the work done with these web technologies.
+              </p>
+            </div>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Center Section */}
+        <div className="col-span-1 lg:col-span-2 flex flex-col items-center justify-center h-full w-full">
+          <div className="relative h-full">
+            {/* Main Profile Image */}
+            <Image
+              src="/images/me-1.jpg"
+              alt="Areeba Fatima"
+              width={550}
+              height={550}
+              className="rounded-lg object-cover h-[550px]"
+            />
+            <div className="absolute lg:w-[350px] w-[250px] bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-500 bg-opacity-30 backdrop-blur-md rounded-3xl px-4 py-6 border-2 border-black">
+              <p className="text-5xl lg:text-6xl font-extrabold" id="stylish">Areeba Fatima</p>
+              <div className="flex justify-center space-x-4 mt-4">
+                <Link href="/projects">
+                  <button className="bg-red-500 hover:bg-purple-800 text-white rounded-full px-5 py-2 text-xs lg:text-lg">
+                    Projects
+                  </button>
+                </Link>
+                <Link href="/services">
+                  <button className="bg-black hover:bg-gray-700 text-white rounded-full px-5 py-2 text-xs lg:text-lg">
+                    Services
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Section (Merged Boxes) */}
+        <div className="col-span-1 flex flex-col space-y-8 w-full items-center">
+          <div className="bg-purple-900 p-4 rounded-lg text-center w-full">
+            <p className="text-base lg:text-base font-semibold">
+              Areeba Fatima - Web Designer & Developer
+            </p>
+            <p className="mt-2 text-sm">
+              Karachi-based web designer and developer, passionate about creating user-friendly websites through personal projects.
+            </p>
+            <div className="flex justify-center space-x-4 mt-2">
+              <a href="https://linkedin.com" className="text-white text-lg lg:text-2xl">
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com" className="text-white text-lg lg:text-2xl">
+                <i className="fab fa-github"></i>
+              </a>
+              <a href="https://behance.net" className="text-white text-lg lg:text-2xl">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </div>
+            <Image
+              src="/images/me-3.png"
+              alt="Areeba Fatima"
+              width={200}
+              height={150}
+              className="rounded-lg mt-4 w-full"
+            />
+            <p className="mt-2 text-sm lg:text-base">
+              I prefer email communication over social networks. Feel free to email me, and I'll respond as soon as I can.
+            </p>
+            <Link href="/contact">
+              <button className="bg-black hover:bg-white hover:text-black text-white rounded-full px-4 py-2 mt-4 text-sm lg:mb-0">
+                Contact Me
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
+
