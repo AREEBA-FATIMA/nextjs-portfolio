@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, FormEvent } from 'react';
 import emailjs from 'emailjs-com';
 
@@ -6,10 +6,12 @@ const Contact = () => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [isSent, setIsSent] = useState<boolean | null>(null);  // Success or failure message
+  const [isSent, setIsSent] = useState<boolean | null>(null); // Success or failure message
+  const [loading, setLoading] = useState<boolean>(false); // Loading state
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true); // Start loading state
 
     // Template parameters (data to send)
     const templateParams = {
@@ -23,19 +25,22 @@ const Contact = () => {
       .send(
         'areeba_fatima',  // Your EmailJS Service ID
         'areeba-fatima',  // Your Template ID
-        templateParams,      // Data to be sent (name, email, message)
-        '2-ffOv2-Xbt1BVHtX'       // Your EmailJS User ID
+        templateParams,   // Data to be sent (name, email, message)
+        '2-ffOv2-Xbt1BVHtX' // Your EmailJS User ID
       )
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          setIsSent(true);  // Show success message
+          setIsSent(true); // Show success message
         },
         (error) => {
           console.log('FAILED...', error);
-          setIsSent(false);  // Show failure message
+          setIsSent(false); // Show failure message
         }
-      );
+      )
+      .finally(() => {
+        setLoading(false); // End loading state
+      });
   };
 
   return (
@@ -79,8 +84,9 @@ const Contact = () => {
           <button
             type="submit"
             className="bg-purple-900 w-full sm:w-1/2 hover:bg-purple-100 hover:text-black text-white font-bold py-3 rounded-full transition duration-300"
+            disabled={loading} // Disable while loading
           >
-            Send Message
+            {loading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
         {/* Success/Failure Message */}

@@ -73,7 +73,7 @@ const Services = () => {
           </div>
           <h2 className="text-2xl font-semibold mb-1">SEO Optimization</h2>
           <p className="text-center">
-            Boosting your website's visibility on search engines.
+            Boosting your website&apos;s visibility on search engines.
           </p>
         </div>
       </div>
