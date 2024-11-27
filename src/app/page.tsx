@@ -35,12 +35,12 @@ export default function Profile() {
                 <div className="flex flex-col items-center mt-4 space-y-2">
                   {/* Upper Line for Skill Icons */}
                   <div className="flex justify-center space-x-2 lg:space-x-4">
-                    {[
-                      { src: "/images/s-1.png", alt: "HTML5" },
-                      { src: "/images/s-2.png", alt: "CSS3" },
+                    {[ 
+                      { src: "/images/s-1.png", alt: "HTML5" }, 
+                      { src: "/images/s-2.png", alt: "CSS3" }, 
                       { src: "/images/s-3.png", alt: "JavaScript" },
-                      { src: "/images/s-4.png", alt: "TypeScript" },
-                      { src: "/images/s-5.png", alt: "Next.js" },
+                      { src: "/images/s-4.png", alt: "TypeScript" }, 
+                      { src: "/images/s-5.png", alt: "Next.js" }
                     ].map((skill, index) => (
                       <div key={index} className="relative group">
                         <Image
@@ -60,12 +60,12 @@ export default function Profile() {
 
                   {/* Lower Line for Skill Icons */}
                   <div className="flex justify-center space-x-2 lg:space-x-4">
-                    {[
-                      { src: "/images/s-6.png", alt: "Tailwind CSS" },
-                      { src: "/images/s-7.png", alt: "Figma" },
+                    {[ 
+                      { src: "/images/s-6.png", alt: "Tailwind CSS" }, 
+                      { src: "/images/s-7.png", alt: "Figma" }, 
                       { src: "/images/s-8.png", alt: "VS Code" },
-                      { src: "/images/s-9.png", alt: "Bootstrap" },
-                      { src: "/images/s-10.png", alt: "Canva" },
+                      { src: "/images/s-9.png", alt: "Bootstrap" }, 
+                      { src: "/images/s-10.png", alt: "Canva" }
                     ].map((skill, index) => (
                       <div key={index + 5} className="relative group">
                         <Image
@@ -124,7 +124,7 @@ export default function Profile() {
         <div className="col-span-1 flex flex-col space-y-8 w-full items-center">
           <div className="bg-purple-900 p-4 rounded-lg text-center w-full">
             <p className="text-base lg:text-base font-semibold">
-              Areeba Fatima - Web Designer & Developer
+              Areeba Fatima - Web Designer &amp; Developer
             </p>
             <p className="mt-2 text-sm">
               Karachi-based web designer and developer, passionate about creating user-friendly websites through personal projects.
@@ -161,4 +161,3 @@ export default function Profile() {
     </div>
   );
 }
-
