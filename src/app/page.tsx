@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +10,9 @@ function Profile() {
           {/* Profile Summary Box */}
           <div className="bg-purple-900 p-2 rounded-lg text-center w-full">
             <div className="flex flex-col items-center">
-              <p className="text-6xl lg:text-4xl font-extrabold mt-2 mb-2" id="stylish">Areeba Fatima</p>
+              <p className="text-6xl lg:text-4xl font-extrabold mt-2 mb-2" id="stylish">
+                Areeba Fatima
+              </p>
               <Image
                 src="/images/me-2.png"
                 alt="Areeba Fatima"
@@ -36,11 +37,11 @@ function Profile() {
                 <div className="flex flex-col items-center mt-4 space-y-2">
                   {/* Upper Line for Skill Icons */}
                   <div className="flex justify-center space-x-2 lg:space-x-4">
-                    {[ 
-                      { src: "/images/s-1.png", alt: "HTML5" }, 
-                      { src: "/images/s-2.png", alt: "CSS3" }, 
+                    {[
+                      { src: "/images/s-1.png", alt: "HTML5" },
+                      { src: "/images/s-2.png", alt: "CSS3" },
                       { src: "/images/s-3.png", alt: "JavaScript" },
-                      { src: "/images/s-4.png", alt: "TypeScript" }, 
+                      { src: "/images/s-4.png", alt: "TypeScript" },
                       { src: "/images/s-5.png", alt: "Next.js" }
                     ].map((skill, index) => (
                       <div key={index} className="relative group">
@@ -61,11 +62,11 @@ function Profile() {
 
                   {/* Lower Line for Skill Icons */}
                   <div className="flex justify-center space-x-2 lg:space-x-4">
-                    {[ 
-                      { src: "/images/s-6.png", alt: "Tailwind CSS" }, 
-                      { src: "/images/s-7.png", alt: "Figma" }, 
+                    {[
+                      { src: "/images/s-6.png", alt: "Tailwind CSS" },
+                      { src: "/images/s-7.png", alt: "Figma" },
                       { src: "/images/s-8.png", alt: "VS Code" },
-                      { src: "/images/s-9.png", alt: "Bootstrap" }, 
+                      { src: "/images/s-9.png", alt: "Bootstrap" },
                       { src: "/images/s-10.png", alt: "Canva" }
                     ].map((skill, index) => (
                       <div key={index + 5} className="relative group">
@@ -104,7 +105,9 @@ function Profile() {
               className="rounded-lg object-cover h-[550px]"
             />
             <div className="absolute lg:w-[350px] w-[250px] bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-500 bg-opacity-30 backdrop-blur-md rounded-3xl px-4 py-6 border-2 border-black">
-              <p className="text-5xl lg:text-6xl font-extrabold" id="stylish">Areeba Fatima</p>
+              <p className="text-5xl lg:text-6xl font-extrabold" id="stylish">
+                Areeba Fatima
+              </p>
               <div className="flex justify-center space-x-4 mt-4">
                 <Link href="/projects">
                   <button className="bg-red-500 hover:bg-purple-800 text-white rounded-full px-5 py-2 text-xs lg:text-lg">
@@ -149,7 +152,7 @@ function Profile() {
               className="rounded-lg mt-4 w-full"
             />
             <p className="mt-2 text-sm lg:text-base">
-              I prefer email communication over social networks. Feel free to email me, and I'll respond as soon as I can.
+              I prefer email communication over social networks. Feel free to email me, and I&#39;ll respond as soon as I can.
             </p>
             <Link href="/contact">
               <button className="bg-black hover:bg-white hover:text-black text-white rounded-full px-4 py-2 mt-4 text-sm lg:mb-0">
@@ -163,4 +166,4 @@ function Profile() {
   );
 }
 
-export default Profile
+export default Profile;
